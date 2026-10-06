@@ -37,13 +37,13 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest -v
+          python -m pytest -v
 
       - name: Run coverage
         run: |
-          pytest --cov=app --cov-report=term-missing
+          python -m pytest --cov=app --cov-report=term-missing
 
       - name: Verify application
         run: |
           python -c "from app.calculator import add; assert add(2, 3) == 5"
-          echo "Application verification passed.
+          echo "Application verification passed."
